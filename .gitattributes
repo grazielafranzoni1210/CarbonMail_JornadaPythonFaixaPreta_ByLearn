@@ -1,5 +1,7 @@
 $ cat .gitattributes
 
 *.py linguist-language=Python
+*.bat linguist-language=Python
 dist/* linguist-vendored
 .py linguist-vendored=true
+.bat linguist-vendored=true
