@@ -5,9 +5,11 @@ $ cat .gitattributes
 *.exe linguist-language=Python
 *.cfg linguist-language=Python
 *.ini linguist-language=Python
+*.json linguist-language=Python
 dist/* linguist-vendored
 .py linguist-vendored=true
 .bat linguist-vendored=true
 .exe linguist-vendored=true
 .cfg linguist-vendored=true
 .ini linguist-vendored=true
+.json linguist-vendored=true
