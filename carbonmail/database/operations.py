@@ -1,0 +1,1 @@
+# Para operações gerais do banco de dados

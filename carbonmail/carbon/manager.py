@@ -1,0 +1,1 @@
+# Onde estarão todas as funções deste pacote.
