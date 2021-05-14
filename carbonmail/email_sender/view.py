@@ -10,10 +10,34 @@ import PySimpleGUI as sg
 #           Cada sublista, é uma lista da janela
 #           Cada elemento, é um componente visual
 
+lista = ["Administradores", "Alunos"]
+
 def get_layout():
     layout = [
-        [sg.Text("Eu sou um texto")],
-        [sg.Text("Eu sou um texto"), sg.Button("Eu sou um botão")],
+        [
+            sg.Text("Selecione o seu código"),
+            sg.In(),
+            sg.FileBrowse(
+                "Selecione", file_types=( ("Códigos Python", "*.py") 
+                ,) # file_types diz quais são os arquivos que ele vai aceitar
+        ), # * significa qualquer coisa, então nesse caso "qualquer coisa.py"
+    ],        
+        [
+            sg.Text("Selecione a lista de destinário"), 
+            sg.Combo(lista, default_value=lista[1]),
+        ],
+        [
+            sg.Text("Insira o título: "),
+            sg.In(key="-Title-"),
+        ],
+        [
+           sg.Text("Insira o conteúdo do e-mail:"),
+           sg.In(key="-Content-"), 
+        ],
+        [
+            sg.Button("Enviar", key="-Send-"),
+            sg.Button("Gerenciar listas", key="-ListEditor-")
+        ]
     ]
     
     return layout
