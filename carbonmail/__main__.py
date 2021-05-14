@@ -17,5 +17,14 @@ def enable_window():
         if event == WIN_CLOSED: # se o usuário clicou no x, vai fechar a janela
             window.close()
             break # para sair do laço de repetição do while
+        
+        if event == '-Send-':
+            title = values['-Title-']
+            content = values['-Content-']
+            
+            sg.Popup(
+                f'O título é: {title}\nO conteúdo é: {content}', # \n é uma quebra de linha 
+                title='E-mail',
+            )
 
 enable_window()

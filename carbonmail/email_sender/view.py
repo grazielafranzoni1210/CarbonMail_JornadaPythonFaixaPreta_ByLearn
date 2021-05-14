@@ -32,7 +32,7 @@ def get_layout():
         ],
         [
            sg.Text("Insira o conteúdo do e-mail:"),
-           sg.In(key="-Content-"), 
+           sg.MLine(key="-Content-"), 
         ],
         [
             sg.Button("Enviar", key="-Send-"),
