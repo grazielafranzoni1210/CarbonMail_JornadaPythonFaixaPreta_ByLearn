@@ -1,5 +1,5 @@
 $ cat .gitattributes
 
-*.ipynb linguist-language=Python
+*.py linguist-language=Python
 dist/* linguist-vendored
-.ipynb linguist-vendored=true
+.py linguist-vendored=true
