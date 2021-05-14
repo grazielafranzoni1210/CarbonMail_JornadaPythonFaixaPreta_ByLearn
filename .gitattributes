@@ -3,7 +3,9 @@ $ cat .gitattributes
 *.py linguist-language=Python
 *.bat linguist-language=Python
 *.exe linguist-language=Python
+*.cfg linguist-language=Python
 dist/* linguist-vendored
 .py linguist-vendored=true
 .bat linguist-vendored=true
 .exe linguist-vendored=true
+.cfg linguist-vendored=true
