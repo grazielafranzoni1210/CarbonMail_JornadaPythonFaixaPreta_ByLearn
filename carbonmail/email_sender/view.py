@@ -2,6 +2,7 @@
 # Tudo que existir de visual, vai ficar aqui!
 # É principalmente aqui, que usaremos o PySimpleGUI!
 
+from carbonmail.utils import inner_element_space
 import PySimpleGUI as sg
 
 # Window => Janela
@@ -13,34 +14,41 @@ import PySimpleGUI as sg
 lista = ["Administradores", "Alunos"]
 
 def get_layout():
+    
+    frame_campaign = [
+        inner_element_space(500),
+        [
+            sg.Text('Selecione o código'),
+            sg.In(key='-Code-', size=(30, 1)),
+            sg.FileBrowse('Selecione', file_types=(('Códigos Python', "*.py"),), size=(15,1)),
+        ],
+        [
+            sg.Text('Selecione a lista de destinários'),
+            sg.Combo(lista, lista[1], key='-Lists-'),
+        ],
+        inner_element_space(500),
+    ]
+    
+    frame_email = [
+        inner_element_space(500),
+        [sg.Text('Insira o título', font=('Helvetica 15'))],
+        [sg.In(key='-Title-', size=(62,1))],
+        [sg.Text('Insira o conteúdo', font=('Helvetica 15'))],
+        [sg.MLine(key='-Content-', size=(60,10))],
+        inner_element_space(500),
+    ]
+    
     layout = [
-        [
-            sg.Text("Selecione o seu código"),
-            sg.In(),
-            sg.FileBrowse(
-                "Selecione", file_types=( ("Códigos Python", "*.py") 
-                ,) # file_types diz quais são os arquivos que ele vai aceitar
-        ), # * significa qualquer coisa, então nesse caso "qualquer coisa.py"
-    ],        
-        [
-            sg.Text("Selecione a lista de destinário"), 
-            sg.Combo(lista, default_value=lista[1]),
-        ],
-        [
-            sg.Text("Insira o título: "),
-            sg.In(key="-Title-"),
-        ],
-        [
-           sg.Text("Insira o conteúdo do e-mail:"),
-           sg.MLine(key="-Content-"), 
-        ],
-        [
-            sg.Button("Enviar", key="-Send-"),
-            sg.Button("Gerenciar listas", key="-ListEditor-")
-        ]
+        inner_element_space(500),
+        [sg.Frame('Configurações da campanha', frame_campaign, element_justification='c',)],
+        [sg.Frame('Configurações do e-mail', frame_email, element_justification='c',)],
+        [sg.Button('Enviar e-mail', key='-Send-', size=(15,1), pad=(10, (10,0)))],
+        [sg.Button('Gerenciar listas', key='-Send-', size=(15,1), pad=(10, (10,0)))],
+        inner_element_space(500),
     ]
     
     return layout
 
 def get_window():
-    return sg.Window("Teste de janela", get_layout())
+    sg.theme("DarkBlue14")
+    return sg.Window("Enviador de e-mail", get_layout(), element_justification="c",)

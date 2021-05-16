@@ -21,44 +21,19 @@ def get_layout():
             sg.Button("Criar", key="-Create-", size=(10, 1)),
         ],
         [
-            sg.Button(
-                "Deletar a Lista",
-                key="-Delete-",
-                size=(15, 1),
-                pad=(5, (7, 7)),
-            ),
-            sg.Button(
-                "Mostrar Contatos",
-                key="-ShowContacts-",
-                size=(15, 1),
-                pad=(5, (7, 7)),
-            ),
+            sg.Button("Deletar a Lista", key="-Delete-", size=(15, 1), pad=(5, (7, 7)), ),
+            sg.Button("Mostrar Contatos", key="-ShowContacts-", size=(15, 1), pad=(5, (7, 7)),),
         ],
         inner_element_space(600),
     ]
 
     frame_import = [
         inner_element_space(600),
-        [
-            sg.Text(
-                "Selecione o arquivo (CSV):",
-                tooltip="Cabeçalhos: name e email",
-            ),
-            sg.In(key="-CSV-"),
-            sg.FileBrowse(
-                "Selecionar",
-                file_types=(("CSV", "*.csv"),),
-                tooltip="Cabeçalhos: name e email",
-            ),
+        [sg.Text("Selecione o arquivo (CSV):", tooltip="Cabeçalhos: name e email",),
+         sg.In(key="-CSV-"),
+         sg.FileBrowse("Selecionar", file_types=(("CSV", "*.csv"),), tooltip="Cabeçalhos: name e email",),
         ],
-        [
-            sg.Button(
-                "Importar Contatos",
-                key="-Import-",
-                size=(15, 1),
-                pad=(0, (7, 7)),
-            ),
-        ],
+        [sg.Button("Importar Contatos", key="-Import-", size=(15, 1), pad=(0, (7, 7)),),],
         inner_element_space(600),
     ]
 
@@ -66,47 +41,15 @@ def get_layout():
         inner_element_space(600),
         [sg.Text("Insira o nome:"), sg.In(key="-Name-")],
         [sg.Text("Insira o email:"), sg.In(key="-Email-")],
-        [
-            sg.Button(
-                "Adicionar Contato",
-                key="-Add-",
-                size=(15, 1),
-                pad=(0, (7, 7)),
-            ),
-        ],
+        [sg.Button("Adicionar Contato", key="-Add-", size=(15, 1), pad=(0, (7, 7)),),],
         inner_element_space(600),
     ]
 
     layout = [
-        [
-            sg.Frame(
-                "Configurações da Lista",
-                frame_list,
-                element_justification="c",
-            )
-        ],
-        [
-            sg.Frame(
-                "Importar Contatos",
-                frame_import,
-                element_justification="c",
-            )
-        ],
-        [
-            sg.Frame(
-                "Adicionar Contato",
-                frame_add,
-                element_justification="c",
-            )
-        ],
-        [
-            sg.Button(
-                "Voltar",
-                key="-Back-",
-                size=(15, 1),
-                pad=(0, (7, 7)),
-            )
-        ],
+        [sg.Frame("Configurações da Lista", frame_list, element_justification="c",)],
+        [sg.Frame("Importar Contatos", frame_import, element_justification="c",)],
+        [sg.Frame("Adicionar Contato", frame_add, element_justification="c",)],
+        [sg.Button("Voltar", key="-Back-", size=(15, 1), pad=(0, (7, 7)),)],
         inner_element_space(600),
     ]
 
