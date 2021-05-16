@@ -20,8 +20,8 @@ class List_Editor:
         while True:
             event, values = self.window.read()
 
-            if event == WIN_CLOSED:
-                self.window.close()
+            if event in (WIN_CLOSED, '-Back-'): # dois eventos acontecendo na mesma ação
+                self.window.close() # event com in, verifica se está ou em WIN_CLOSED ou em Back
                 self.ems.unhide_window()
                 break
             

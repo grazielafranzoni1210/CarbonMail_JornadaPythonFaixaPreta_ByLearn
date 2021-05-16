@@ -43,7 +43,7 @@ def get_layout():
         [sg.Frame('Configurações da campanha', frame_campaign, element_justification='c',)],
         [sg.Frame('Configurações do e-mail', frame_email, element_justification='c',)],
         [sg.Button('Enviar e-mail', key='-Send-', size=(15,1), pad=(10, (10,0)))],
-        [sg.Button('Gerenciar listas', key='-Send-', size=(15,1), pad=(10, (10,0)))],
+        [sg.Button('Gerenciar listas', key='-ListEditor-', size=(15,1), pad=(10, (10,0)))],
         inner_element_space(500),
     ]
     
