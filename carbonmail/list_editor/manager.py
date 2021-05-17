@@ -78,10 +78,8 @@ def import_contacts(csv_path, list_name):
 
         return 1
 
-
-
 def delete_list(list_name):
-    db_delete_list()
+    db_delete_list(list_name)
     
 def get_list_contacts(list_name):
     return search_contacts(list_name)

@@ -1,11 +1,11 @@
 # É onde fica o código para a interface gráfica.
 # Tudo que existir de visual, vai ficar aqui!
 # É principalmente aqui, que usaremos o PySimpleGUI!
-from calendar import c
+from carbonmail.list_editor.manager import load_lists
 import PySimpleGUI as sg
 from carbonmail.utils import inner_element_space
 
-lista =['Administradores', 'Alunos']
+lista = load_lists()
 
 def get_layout():
 

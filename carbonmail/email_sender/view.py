@@ -2,6 +2,7 @@
 # Tudo que existir de visual, vai ficar aqui!
 # É principalmente aqui, que usaremos o PySimpleGUI!
 
+from carbonmail.list_editor.manager import load_lists
 from carbonmail.utils import inner_element_space
 import PySimpleGUI as sg
 
@@ -11,7 +12,7 @@ import PySimpleGUI as sg
 #           Cada sublista, é uma lista da janela
 #           Cada elemento, é um componente visual
 
-lista = ["Administradores", "Alunos"]
+lista = load_lists()
 
 def get_layout():
     
