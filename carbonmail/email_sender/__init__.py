@@ -49,4 +49,4 @@ class Email_Sender():
     
     def unhide_window(self):
         if self.window != None:
-            self.window.Unhide()
+            self.window.UnHide()
